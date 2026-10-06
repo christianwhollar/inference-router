@@ -17,7 +17,8 @@ function toast(msg, bad = false) {
   let t = $("#toast");
   t.textContent = msg;
   t.hidden = false;
-  t.style.background = bad ? "#852f39" : "#173c47";
+  t.style.background = bad ? "var(--danger-bg)" : "var(--ink)";
+  t.style.color = bad ? "var(--danger)" : "var(--surface)";
   clearTimeout(window.toastTimer);
   window.toastTimer = setTimeout(() => (t.hidden = true), 6000);
 }
@@ -58,10 +59,11 @@ function jsonView(value) {
   return `<pre class="code">${esc(JSON.stringify(value, null, 2))}</pre>`;
 }
 function setNav(items, active, fn) {
+  $("#main").dataset.page = active;
   $("#nav").innerHTML = items
     .map(
       ([id, label]) =>
-        `<button data-nav="${id}" class="${id === active ? "active" : ""}">${label}</button>`,
+        `<button data-nav="${id}" ${id === active ? 'aria-current="page"' : ""} class="${id === active ? "active" : ""}">${label}</button>`,
     )
     .join("");
   $("#nav").onclick = (e) => {

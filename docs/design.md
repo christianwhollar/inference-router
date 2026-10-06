@@ -33,3 +33,7 @@ Circuit state and response cache are local to each process. The first eligible h
 The original compact reference implementation is documented in [design-v1.md](design-v1.md). Version 0.2 adds a complete browser workflow, operational state handling, larger experiments or failure studies, and reproducible release artifacts. Earlier studies remain in `reports/`; they have not been replaced with improved numbers under their original names.
 
 See [operations.md](operations.md) for setup and failure demonstrations and [verification.md](verification.md) for the exact validation scope.
+
+## Interface design
+
+Dark surfaces, monospace typography, and lime accents around the request controls. This routing console uses its own typography, spacing, navigation and component shapes. Fonts and icons are local system fonts and inline SVG, with no external asset requests. The interface supports narrow screens, visible keyboard focus, a skip link, and active navigation semantics.

@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "inference-router"
-version = "0.2.0"
+version = "0.2.1"
 description = "Budgeted model routing with failover, context packing, and telemetry"
 requires-python = ">=3.12"
 dependencies = ["jsonschema>=4.23,<5", "psycopg[binary]>=3.2,<4", "fastapi>=0.115,<1", "uvicorn>=0.34,<1", "httpx>=0.28,<1", "numpy>=2,<3", "prometheus-client>=0.21,<1", "opentelemetry-sdk>=1.30,<2", "opentelemetry-exporter-otlp-proto-http>=1.30,<2"]

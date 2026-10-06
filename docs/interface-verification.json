@@ -1,0 +1,170 @@
+{
+  "release": "0.2.1",
+  "scope": "Interface styling and navigation semantics; business logic unchanged",
+  "viewports": [
+    320,
+    390,
+    768,
+    1024,
+    1440
+  ],
+  "responsive_views": [
+    {
+      "project": "inference-router",
+      "width": 1440,
+      "tab": "playground",
+      "overflow": false,
+      "aria_current": true
+    },
+    {
+      "project": "inference-router",
+      "width": 1440,
+      "tab": "models",
+      "overflow": false,
+      "aria_current": true
+    },
+    {
+      "project": "inference-router",
+      "width": 1440,
+      "tab": "usage",
+      "overflow": false,
+      "aria_current": true
+    },
+    {
+      "project": "inference-router",
+      "width": 1440,
+      "tab": "benchmarks",
+      "overflow": false,
+      "aria_current": true
+    },
+    {
+      "project": "inference-router",
+      "width": 1024,
+      "tab": "playground",
+      "overflow": false,
+      "aria_current": true
+    },
+    {
+      "project": "inference-router",
+      "width": 1024,
+      "tab": "models",
+      "overflow": false,
+      "aria_current": true
+    },
+    {
+      "project": "inference-router",
+      "width": 1024,
+      "tab": "usage",
+      "overflow": false,
+      "aria_current": true
+    },
+    {
+      "project": "inference-router",
+      "width": 1024,
+      "tab": "benchmarks",
+      "overflow": false,
+      "aria_current": true
+    },
+    {
+      "project": "inference-router",
+      "width": 768,
+      "tab": "playground",
+      "overflow": false,
+      "aria_current": true
+    },
+    {
+      "project": "inference-router",
+      "width": 768,
+      "tab": "models",
+      "overflow": false,
+      "aria_current": true
+    },
+    {
+      "project": "inference-router",
+      "width": 768,
+      "tab": "usage",
+      "overflow": false,
+      "aria_current": true
+    },
+    {
+      "project": "inference-router",
+      "width": 768,
+      "tab": "benchmarks",
+      "overflow": false,
+      "aria_current": true
+    },
+    {
+      "project": "inference-router",
+      "width": 390,
+      "tab": "playground",
+      "overflow": false,
+      "aria_current": true
+    },
+    {
+      "project": "inference-router",
+      "width": 390,
+      "tab": "models",
+      "overflow": false,
+      "aria_current": true
+    },
+    {
+      "project": "inference-router",
+      "width": 390,
+      "tab": "usage",
+      "overflow": false,
+      "aria_current": true
+    },
+    {
+      "project": "inference-router",
+      "width": 390,
+      "tab": "benchmarks",
+      "overflow": false,
+      "aria_current": true
+    },
+    {
+      "project": "inference-router",
+      "width": 320,
+      "tab": "playground",
+      "overflow": false,
+      "aria_current": true
+    },
+    {
+      "project": "inference-router",
+      "width": 320,
+      "tab": "models",
+      "overflow": false,
+      "aria_current": true
+    },
+    {
+      "project": "inference-router",
+      "width": 320,
+      "tab": "usage",
+      "overflow": false,
+      "aria_current": true
+    },
+    {
+      "project": "inference-router",
+      "width": 320,
+      "tab": "benchmarks",
+      "overflow": false,
+      "aria_current": true
+    }
+  ],
+  "workflow": {
+    "project": "inference-router",
+    "tabs": [
+      "playground",
+      "models",
+      "usage",
+      "benchmarks"
+    ],
+    "workflow": "passed",
+    "javascript_errors": []
+  },
+  "javascript_syntax": "passed",
+  "keyboard_skip_link": "passed",
+  "screenshots": [
+    "screenshot.png",
+    "mobile.png"
+  ]
+}
