@@ -10,3 +10,15 @@ pytest==9.1.1
 pytest-asyncio==1.4.0
 ruff==0.16.10
 uvicorn==0.54.0
+
+# Research and released-model runtime
+transformers==4.57.6
+peft==0.21.2
+safetensors==0.8.0
+sentence-transformers==5.7.0
+tokenizers==0.22.2
+huggingface-hub==0.36.2
+scipy==1.18.1
+scikit-learn==1.9.1
+accelerate==1.15.0
+jsonschema==4.26.0

@@ -1,6 +1,12 @@
-# Architecture and decisions
+# Operating guide
 
-The README describes the current architecture and measured results. This document records the deployment boundary and links decisions to inspectable code.
+## Start, stop, and inspect
+
+Start the loopback demo with `python -m router.serve --demo` and open port 8104. Stop with Ctrl-C. Persistent data lives under the configured runtime directory. Restarting does not reset edited demo data. Remove or choose a fresh runtime directory only when you deliberately want a fresh synthetic workspace.
+
+For hosted use, configure `API_KEYS_JSON` with strong random keys and server-owned tenant/user/role claims; omit `APP_DEMO`. Terminate TLS, restrict network access and persist application state. Do not publish the built-in demo credentials on an externally reachable service. The included Compose configurations publish to loopback only.
+
+`/health` checks application availability. The three operational services expose authenticated `/metrics` and optional OpenTelemetry export through `OTEL_EXPORTER_OTLP_ENDPOINT`. These metrics do not log raw prompts, API keys, or document bodies. The evaluation and model services expose health and their explicit run/inference results.
 
 ## Accounting and failures
 
@@ -28,8 +34,6 @@ Circuit state and response cache are local to each process. The first eligible h
 - Return JSON that violates the requested schema: reject it and preserve uncertain usage.
 
 
-## Evolution
+## Five-minute technical walkthrough
 
-The original compact reference implementation is documented in [design-v1.md](design-v1.md). Version 0.2 adds a complete browser workflow, operational state handling, larger experiments or failure studies, and reproducible release artifacts. Earlier studies remain in `reports/`; they have not been replaced with improved numbers under their original names.
-
-See [operations.md](operations.md) for setup and failure demonstrations and [verification.md](verification.md) for the exact validation scope.
+Explain the central data flow in the README, run one successful user workflow, deliberately trigger one failure above, inspect its recorded evidence, and explain one limitation you would address before a broader deployment. Describe measured results as results of this repository's experiments rather than as prior employer production outcomes.

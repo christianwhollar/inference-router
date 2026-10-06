@@ -19,6 +19,33 @@ class Completion(BaseModel):
     minimum_quality: float = Field(default=0.5, ge=0, le=1, allow_inf_nan=False)
     data_class: Literal["public", "confidential"] = "public"
     response_format: Literal["text", "json"] = "text"
+    task: Literal["general", "extraction", "arithmetic", "policy"] = "general"
+    output_schema: dict | None = None
+
+    @model_validator(mode="after")
+    def validate_output_schema(self):
+        if self.output_schema is not None:
+            from jsonschema import Draft202012Validator
+
+            encoded = json.dumps(self.output_schema)
+            if len(encoded) > 12000 or '"$ref"' in encoded:
+                raise ValueError(
+                    "Output schema must be self-contained and at most 12000 characters"
+                )
+            try:
+                Draft202012Validator.check_schema(self.output_schema)
+            except Exception as exc:
+                raise ValueError("Invalid output JSON schema") from exc
+            if self.response_format != "json":
+                raise ValueError("output_schema requires JSON response format")
+        return self
+
+
+class TaskScore(BaseModel):
+    accuracy: float = Field(ge=0, le=1)
+    samples: int = Field(ge=20)
+    p50_ms: float = Field(ge=0)
+    dataset_sha256: str = Field(min_length=64, max_length=64)
 
 
 class Model(BaseModel):
@@ -34,6 +61,8 @@ class Model(BaseModel):
     approved_for_confidential: bool = False
     timeout_seconds: float = Field(default=10, gt=0, le=30)
     api_key_env: str | None = None
+    task_scores: dict[str, TaskScore] = Field(default_factory=dict)
+    calibration_model_digest: str | None = None
 
     @model_validator(mode="after")
     def valid_endpoint(self):

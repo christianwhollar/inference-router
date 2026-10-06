@@ -1,0 +1,39 @@
+{
+  "release": "0.2.0",
+  "combined_suite": {
+    "tests": 77,
+    "passed": 77,
+    "skipped": 0
+  },
+  "runtime": "Python 3.12; macOS arm64",
+  "checks": [
+    "Ruff source/test/script lint",
+    "All shipped JavaScript parsed by Node.js",
+    "Full browser workflows with Chromium; no JavaScript errors",
+    "Responsive mobile screenshots",
+    "Real PostgreSQL quota/vector tests and local EVM tests enabled in combined suite"
+  ],
+  "test_command": "SOLCX_BINARY_PATH=... RUN_CHAIN_TESTS=1 RUN_EMBEDDING_TESTS=1 PGVECTOR_TEST_DSN=... python -m pytest --import-mode=importlib outputs/*/tests -q",
+  "external_services": "Local PostgreSQL/pgvector, Ollama embeddings, EthereumTester EVM. No public cloud or public chain deployment.",
+  "container": {
+    "project": "inference-router",
+    "health": 200,
+    "browser_assets": 200,
+    "uid": "10001",
+    "compose_config": "valid",
+    "compose_command": "passed",
+    "fixture_completion": "passed"
+  },
+  "browser": {
+    "project": "inference-router",
+    "tabs": [
+      "playground",
+      "models",
+      "usage",
+      "benchmarks"
+    ],
+    "workflow": "passed",
+    "javascript_errors": []
+  },
+  "connected_services": "passed with actual Ollama responses"
+}

@@ -1,0 +1,97 @@
+{
+  "status": "passed",
+  "scope": "Fresh local demo services, synthetic source records, actual Ollama model responses.",
+  "generated_answer": {
+    "abstained": false,
+    "answer": "A quantity or settlement date discrepancy requires counterparty confirmation and independent reviewer approval before release.",
+    "citations": [
+      {
+        "id": "connected-settlement-policy@1:0",
+        "document_id": "connected-settlement-policy",
+        "revision": 1,
+        "title": "Synthetic settlement and quantity review policy",
+        "text": "A quantity or settlement date discrepancy requires counterparty confirmation and independent reviewer approval before release. The analyst records both source values and cannot approve their own case.",
+        "sha256": "8765d60bea8fff3431588aeb766087a1bc33e0a169779174fefa1215d90137e1",
+        "score": 2.2603591406925636,
+        "lexical_score": 2.2603591406925636,
+        "dense_score": null,
+        "fusion_score": null
+      }
+    ],
+    "mode": "generated",
+    "context_words": 27,
+    "query_id": "4f76487e-7854-4a53-b77d-288265f4ef9e",
+    "latency_ms": 1.3724160380661488,
+    "entailment_verified": false
+  },
+  "investigation": {
+    "cash_difference": "-9912.50",
+    "currency": "USD",
+    "differences": [
+      {
+        "counterparty": "1100",
+        "field": "quantity",
+        "internal": "1000"
+      },
+      {
+        "counterparty": "2026-10-09",
+        "field": "settlement",
+        "internal": "2026-10-08"
+      }
+    ],
+    "evidence": [
+      "internal",
+      "counterparty"
+    ],
+    "narrative_source": "model_unverified_commentary",
+    "policy_evidence": [
+      {
+        "dense_score": null,
+        "document_id": "connected-settlement-policy",
+        "fusion_score": null,
+        "id": "connected-settlement-policy@1:0",
+        "lexical_score": 1.684994995789002,
+        "revision": 1,
+        "score": 1.684994995789002,
+        "sha256": "8765d60bea8fff3431588aeb766087a1bc33e0a169779174fefa1215d90137e1",
+        "text": "A quantity or settlement date discrepancy requires counterparty confirmation and independent reviewer approval before release. The analyst records both source values and cannot approve their own case.",
+        "title": "Synthetic settlement and quantity review policy"
+      }
+    ],
+    "recommendation": "review",
+    "requires_independent_review": true,
+    "severity": "normal",
+    "stages": [
+      {
+        "role": "reconciler",
+        "status": "complete",
+        "tool": "compare_records"
+      },
+      {
+        "role": "risk_checker",
+        "status": "complete",
+        "tool": "cash_difference"
+      },
+      {
+        "role": "review_gate",
+        "status": "complete",
+        "tool": "require_independent_review"
+      },
+      {
+        "role": "policy_retriever",
+        "status": "complete"
+      },
+      {
+        "role": "narrator",
+        "status": "complete"
+      }
+    ],
+    "summary": "Differences require review: quantity, settlement"
+  },
+  "final_case_status": "rejected",
+  "independent_review_enforced": true,
+  "cross_tenant_case_hidden": true,
+  "revoked_policy_hidden_without_reindex": true,
+  "audit_valid": true,
+  "settled_model_calls": 2
+}

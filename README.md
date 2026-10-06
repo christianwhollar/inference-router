@@ -2,63 +2,101 @@
 
 [![checks](https://github.com/christianwhollar/inference-router/actions/workflows/ci.yml/badge.svg)](https://github.com/christianwhollar/inference-router/actions/workflows/ci.yml)
 
-A shared inference service that selects an eligible model under privacy, quality-rating, context, and cost constraints. It reserves a tenant budget before calling a provider and keeps conservative charges for requests whose final billing is unknown.
+A local-model gateway with task-specific route eligibility, privacy filters, context assembly, transactional budget reservations, failover, and an operations console. An uncertain provider charge stays visible until a reviewer reconciles it.
 
-This is a runnable reference implementation using synthetic data. See [design notes](docs/design.md), [development provenance](DEVELOPMENT.md), and [verification](docs/verification.md).
+![Application screenshot](docs/screenshot.png)
 
-## Run locally
+## Start locally
 
-Python 3.12 is the tested runtime.
+Python 3.12 is the tested runtime. From this repository:
 
 ```bash
 python3.12 -m venv .venv
 source .venv/bin/activate
 pip install -c constraints.txt -e '.[dev]'
-python -m router.demo
-pytest -q
+python -m router.serve --demo
 ```
 
-## Routing contract
+Open **http://127.0.0.1:8104**. Demo mode binds to loopback and exposes explicit analyst/reviewer identities for synthetic data. It is opt-in; use configured credentials for a hosted service. Interactive API documentation is at `/docs`.
+
+## Workbench flow
+
+1. Compose a request with a task profile, privacy class, quality floor, context blocks, and budget.
+2. Inspect every model's eligibility and exclusion reasons before making a call.
+3. Run the request and inspect selected model, attempts, token usage, reservation and request IDs.
+4. Open **Usage and reconciliation**. If provider usage is unknown, an independent reviewer can record verified usage and release the unused bound exactly once.
+
+The default local demo uses conspicuously labeled offline fixtures. For real inference:
+
+```bash
+ollama pull qwen2.5:3b
+ollama pull qwen2.5-coder:14b
+python -m router.serve --demo --models config/models.calibrated.json
+```
+
+The calibration configuration uses zero provider tariffs for local inference. Hardware and electricity costs are not estimated. Configure actual provider pricing separately before interpreting the accounting units as real charges.
+
+## Request and accounting lifecycle
 
 ```mermaid
 flowchart LR
-    Request[Authenticated request] --> Policy[Privacy and quality filter]
-    Policy --> Pack[Priority-based context packing]
-    Pack --> Budget[(Atomic quota reservation)]
-    Budget --> Provider[Provider call with deadline]
-    Provider --> Result[Validate usage and JSON]
-    Provider --> Fallback[Bounded failover and circuit breaker]
-    Result --> Refund[Refund unused reservation]
+  Request[Authenticated request] --> Filter[Task quality / privacy / context filters]
+  Filter --> Budget[Atomic tenant reservation]
+  Budget --> Provider[Bounded provider call]
+  Provider -->|verified usage| Settle[Exactly-once settlement]
+  Provider -->|unknown usage| Hold[Retain uncertain reservation]
+  Hold --> Review[Reviewer reconciliation]
+  Review --> Settle
+  Provider -->|failure| Fallback[Permitted model failover]
 ```
 
-The offline demo uses labeled fixture providers. A real adapter calls Ollama's HTTP API, including JSON mode. Model ratings and prices are operator configuration; they are not guaranteed answer quality or a live pricing feed.
+The quota store and reservation journal share a transaction. Successful calls settle verified token usage. Timeouts, malformed outputs and client cancellation retain uncertain reservations. A restarted process retains the journal. Repeated identical settlement is idempotent; a contradictory settlement is rejected. Active calls cannot be manually reconciled until the maximum call window has safely elapsed.
+
+SQLite supports a local instance. Setting `ROUTER_DATABASE_URL` uses PostgreSQL with atomic quota updates and row-locked settlements across replicas. The cache and circuit breakers remain process-local. Half-open circuits admit one probe in a process.
+
+Context blocks are sorted by priority and deduplicated under a conservative UTF-8 byte bound, then marked as untrusted evidence. This is not a tokenizer. JSON responses can be validated against a bounded, self-contained JSON schema. There is a four-request provider concurrency limit, one-second admission timeout and at most three model attempts.
+
+## Calibrate instead of guessing
 
 ```bash
-APP_DEMO=1 uvicorn router.api:app --host 127.0.0.1 --port 8104
-curl http://127.0.0.1:8104/v1/complete \
-  -H 'Authorization: Bearer demo-analyst' -H 'Content-Type: application/json' \
-  -d '{"prompt":"Explain settlement discrepancies","max_output_tokens":128,"budget_usd":0.02,"minimum_quality":0.5}'
+python -m router.calibration --output runtime/calibration
+python -m router.serve --demo --models runtime/calibration/models.json
 ```
 
-## Use a real model
+The study records two actual local models on extraction, arithmetic and policy tasks, with 20 calibration and 20 held-out examples per task/model. Only calibration accuracy and latency enter the routing profile; holdout results remain evaluation evidence. Profiles are tied to installed model digests. General-purpose quality remains an explicitly labeled operator rating.
 
-Install an Ollama model, update [config/models.ollama.json](config/models.ollama.json) to its exact name, and restart:
+The schema-constrained study scored 100% held-out identifier extraction for both models (20 examples each). Held-out arithmetic accuracy was 0% for the 3B model and 5% for the 14B model; policy accuracy was 55% and 70%, respectively. At a 90% requested quality threshold, both arithmetic and policy routes are rejected. These small synthetic suites describe these prompts and model builds, not general capability.
+
+[Protocol 1](reports/calibration-v1/report.json) is retained as a failed development run: JSON mode alone frequently produced the wrong response keys. Protocol 2 enforced the answer schema and used fresh calibration/holdout seeds. Schema compliance fixed the response contract; it did not fix reasoning errors.
+
+Twenty examples per task is a small calibration set, and these are synthetic task families. A profile is not a universal model-quality guarantee. The API exposes that distinction.
+
+## Failure and concurrency study
+
+The controlled provider test sends **240 requests with 24 concurrent clients** through a gateway limited to four provider calls. It injects timeouts, measures failover and latency, reconciles unknown usage, repeats settlement attempts, and reopens the database to verify persistence.
 
 ```bash
-APP_DEMO=1 MODELS_CONFIG=config/models.ollama.json \
-  uvicorn router.api:app --host 127.0.0.1 --port 8104
+python -m router.reliability --output runtime/reliability.json
 ```
 
-The sample configuration names a small model but does not download it. [The live provider smoke record](reports/local-provider-smoke.json) identifies the different installed model used during verification. `response_format:"json"` requests valid JSON. `contexts` accepts objects with `source`, `text`, and `priority`. Duplicate passages are removed and whole passages are selected within a conservative byte-based budget.
+[Recorded reliability results](reports/reliability-v2.json) · [Live task calibration](reports/calibration-v2/report.json) · [Accounting race and cancellation tests](tests/test_accounting.py)
 
-## Quotas and scaling
+## Deploy
 
-The default SQLite ledger is appropriate for one node. Set `ROUTER_DATABASE_URL` to use a shared PostgreSQL quota ledger across replicas. Tests race reservations across distinct ledger instances to check the hard daily limit. `DAILY_BUDGET_USD` defaults to 1 per tenant per UTC day.
+`docker compose up --build` starts the offline loopback demo. The non-root image also supports a real configuration through environment variables. `infra/` contains Terraform for private ECS/Fargate tasks, TLS load balancing, secret references, logs and a shared database configuration. Terraform was validated; AWS resources were not deployed. Provisioning requires an actual VPC, subnets, certificate, database and model endpoint.
 
-Cache entries are scoped to tenant, user, role, request, and model configuration. Cache hits are not charged. The cache and circuit breakers are bounded process-local structures; replicas do not share them. Four concurrent provider calls are allowed per process. Queue waits and provider calls have deadlines, and a request attempts at most three candidates.
 
-`GET /usage` reports reserved-or-spent cost. `GET /metrics` exposes authenticated Prometheus counters/histograms. OpenTelemetry exports spans when an OTLP endpoint is configured; prompts and credentials are not attached to spans. `/health` checks process liveness and `/ready` checks the quota database.
+The live three-service verification passed with actual Ollama responses, authorized policy retrieval, independent review enforcement and settled usage reservations. [Recorded connected workflow](reports/integration-v2.json).
 
-## Deployment
+The provider adapter omits string-length limits from Ollama's generation grammar because the tested sampler rejects some bounded-string schemas. The complete original JSON Schema is still enforced on the returned output before acceptance.
 
-`docker compose up --build` runs a loopback-only fixture demo. [infra](infra/) contains a Terraform ECS/Fargate deployment with TLS termination, private tasks, Secrets Manager references, CloudWatch logs, immutable image digests, two replicas, and deployment rollback. The Terraform configuration was initialized and validated; no cloud resources were provisioned. [Deployment notes](infra/README.md) list the required existing network, database, certificate, model endpoint, and secret.
+## Validation and project notes
+
+```bash
+pytest -q
+ruff check src tests scripts
+```
+
+[Architecture and decisions](docs/design.md) · [Operating guide](docs/operations.md) · [Verification record](docs/verification.md) · [Development provenance](DEVELOPMENT.md)
+
+This is a finished local portfolio application with reproducible experiments and recorded limitations. It does not claim prior production deployment or substitute for operating experience.

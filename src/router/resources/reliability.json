@@ -1,0 +1,17 @@
+{
+  "scope": "Local gateway, synthetic 10ms provider, injected timeouts; no real-model throughput claim",
+  "requests": 240,
+  "client_concurrency": 24,
+  "provider_concurrency": 4,
+  "successes": 240,
+  "wall_seconds": 0.8164503329899162,
+  "requests_per_second": 293.95541933469235,
+  "p50_ms": 76.23606201377697,
+  "p95_ms": 84.67606525227893,
+  "uncertain_reservations": 4,
+  "held_or_spent_micros_before": 6228,
+  "spent_micros_after_reconciliation": 5760,
+  "known_successful_usage_micros": 5760,
+  "duplicate_settlement_preserved_balance": true,
+  "restart_preserved_balance": true
+}

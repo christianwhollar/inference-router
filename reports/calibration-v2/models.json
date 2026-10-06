@@ -1,0 +1,68 @@
+[
+  {
+    "name": "qwen2.5-3b",
+    "model": "qwen2.5:3b",
+    "protocol": "ollama",
+    "endpoint": "http://127.0.0.1:11434",
+    "quality": 0.5,
+    "context_tokens": 4096,
+    "approved_for_confidential": true,
+    "timeout_seconds": 30,
+    "input_per_million": 0,
+    "output_per_million": 0,
+    "calibration_model_digest": "357c53fb659c5076de1d65ccb0b397446227b71a42be9d1603d46168015c9e4b",
+    "task_scores": {
+      "extraction": {
+        "accuracy": 1.0,
+        "samples": 20,
+        "p50_ms": 312.2417080157902,
+        "dataset_sha256": "b9ee91c57064826627f090faa4f0e634c0879645b67b4159ea23a08017e6d06e"
+      },
+      "arithmetic": {
+        "accuracy": 0.05,
+        "samples": 20,
+        "p50_ms": 256.1478749848902,
+        "dataset_sha256": "b9ee91c57064826627f090faa4f0e634c0879645b67b4159ea23a08017e6d06e"
+      },
+      "policy": {
+        "accuracy": 0.6,
+        "samples": 20,
+        "p50_ms": 240.56845848099329,
+        "dataset_sha256": "b9ee91c57064826627f090faa4f0e634c0879645b67b4159ea23a08017e6d06e"
+      }
+    }
+  },
+  {
+    "name": "qwen2.5-coder-14b",
+    "model": "qwen2.5-coder:14b",
+    "protocol": "ollama",
+    "endpoint": "http://127.0.0.1:11434",
+    "quality": 0.5,
+    "context_tokens": 4096,
+    "approved_for_confidential": true,
+    "timeout_seconds": 30,
+    "input_per_million": 0,
+    "output_per_million": 0,
+    "calibration_model_digest": "9ec8897f747e246e970bc5cfdda85d22f1123dc2e3d34978a010a75968716849",
+    "task_scores": {
+      "extraction": {
+        "accuracy": 1.0,
+        "samples": 20,
+        "p50_ms": 703.100604005158,
+        "dataset_sha256": "b9ee91c57064826627f090faa4f0e634c0879645b67b4159ea23a08017e6d06e"
+      },
+      "arithmetic": {
+        "accuracy": 0.05,
+        "samples": 20,
+        "p50_ms": 585.9461250074673,
+        "dataset_sha256": "b9ee91c57064826627f090faa4f0e634c0879645b67b4159ea23a08017e6d06e"
+      },
+      "policy": {
+        "accuracy": 0.75,
+        "samples": 20,
+        "p50_ms": 514.8913745360915,
+        "dataset_sha256": "b9ee91c57064826627f090faa4f0e634c0879645b67b4159ea23a08017e6d06e"
+      }
+    }
+  }
+]

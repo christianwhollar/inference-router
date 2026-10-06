@@ -26,3 +26,22 @@ def test_shared_quota_across_instances():
     with ThreadPoolExecutor(max_workers=8) as pool:
         assert sum(pool.map(reserve, range(20))) == 3
     assert other.spent(tenant) == 90
+
+
+@pytest.mark.skipif(not os.getenv("PGVECTOR_TEST_DSN"), reason="Set PGVECTOR_TEST_DSN")
+def test_shared_settlement_is_exactly_once():
+    dsn = os.environ["PGVECTOR_TEST_DSN"]
+    left, right = PostgresLedger(dsn, 1000), PostgresLedger(dsn, 1000)
+    tenant = "settlement-" + str(uuid.uuid4())
+    reservation = left.begin(tenant, "model", 500, "request")
+    left.uncertain(tenant, reservation, "controlled timeout")
+    with ThreadPoolExecutor(max_workers=8) as pool:
+        list(
+            pool.map(
+                lambda i: (left if i % 2 else right).settle(
+                    tenant, reservation, 125, "reviewer", "verified provider usage"
+                ),
+                range(20),
+            )
+        )
+    assert left.spent(tenant) == right.spent(tenant) == 125

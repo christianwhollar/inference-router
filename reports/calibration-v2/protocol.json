@@ -1,0 +1,13 @@
+{
+  "dataset_sha256": "b9ee91c57064826627f090faa4f0e634c0879645b67b4159ea23a08017e6d06e",
+  "samples_per_task_per_split": 20,
+  "models": {
+    "qwen2.5:3b": "357c53fb659c5076de1d65ccb0b397446227b71a42be9d1603d46168015c9e4b",
+    "qwen2.5-coder:14b": "9ec8897f747e246e970bc5cfdda85d22f1123dc2e3d34978a010a75968716849"
+  },
+  "temperature": 0,
+  "max_output_tokens": 80,
+  "protocol": 2,
+  "output_contract": "required answer field with task-specific JSON type",
+  "scope": "Synthetic, programmatically scored task families; calibration does not transfer to arbitrary prompts."
+}

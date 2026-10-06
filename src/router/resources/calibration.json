@@ -1,0 +1,95 @@
+{
+  "config": {
+    "dataset_sha256": "b9ee91c57064826627f090faa4f0e634c0879645b67b4159ea23a08017e6d06e",
+    "samples_per_task_per_split": 20,
+    "models": {
+      "qwen2.5:3b": "357c53fb659c5076de1d65ccb0b397446227b71a42be9d1603d46168015c9e4b",
+      "qwen2.5-coder:14b": "9ec8897f747e246e970bc5cfdda85d22f1123dc2e3d34978a010a75968716849"
+    },
+    "temperature": 0,
+    "max_output_tokens": 80,
+    "protocol": 2,
+    "output_contract": "required answer field with task-specific JSON type",
+    "scope": "Synthetic, programmatically scored task families; calibration does not transfer to arbitrary prompts."
+  },
+  "summary": {
+    "qwen2.5:3b": {
+      "extraction_calibration": {
+        "accuracy": 1.0,
+        "samples": 20,
+        "p50_ms": 312.2417080157902,
+        "errors": 0
+      },
+      "extraction_holdout": {
+        "accuracy": 1.0,
+        "samples": 20,
+        "p50_ms": 320.51693749963306,
+        "errors": 0
+      },
+      "arithmetic_calibration": {
+        "accuracy": 0.05,
+        "samples": 20,
+        "p50_ms": 256.1478749848902,
+        "errors": 0
+      },
+      "arithmetic_holdout": {
+        "accuracy": 0.0,
+        "samples": 20,
+        "p50_ms": 268.61706300405785,
+        "errors": 0
+      },
+      "policy_calibration": {
+        "accuracy": 0.6,
+        "samples": 20,
+        "p50_ms": 240.56845848099329,
+        "errors": 0
+      },
+      "policy_holdout": {
+        "accuracy": 0.55,
+        "samples": 20,
+        "p50_ms": 243.5640834737569,
+        "errors": 0
+      }
+    },
+    "qwen2.5-coder:14b": {
+      "extraction_calibration": {
+        "accuracy": 1.0,
+        "samples": 20,
+        "p50_ms": 703.100604005158,
+        "errors": 0
+      },
+      "extraction_holdout": {
+        "accuracy": 1.0,
+        "samples": 20,
+        "p50_ms": 698.9679794933181,
+        "errors": 0
+      },
+      "arithmetic_calibration": {
+        "accuracy": 0.05,
+        "samples": 20,
+        "p50_ms": 585.9461250074673,
+        "errors": 0
+      },
+      "arithmetic_holdout": {
+        "accuracy": 0.05,
+        "samples": 20,
+        "p50_ms": 588.809000008041,
+        "errors": 0
+      },
+      "policy_calibration": {
+        "accuracy": 0.75,
+        "samples": 20,
+        "p50_ms": 514.8913745360915,
+        "errors": 0
+      },
+      "policy_holdout": {
+        "accuracy": 0.7,
+        "samples": 20,
+        "p50_ms": 508.50720901507884,
+        "errors": 0
+      }
+    }
+  },
+  "pricing": "Local models have zero provider tariff here. Hardware/electricity cost is excluded.",
+  "selection": "Lowest configured cost, then measured calibration median latency, subject to observed-accuracy and privacy filters."
+}

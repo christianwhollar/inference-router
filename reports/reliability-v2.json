@@ -1,0 +1,1943 @@
+{
+  "scope": "Local gateway, synthetic 10ms provider, injected timeouts; no real-model throughput claim",
+  "requests": 240,
+  "client_concurrency": 24,
+  "provider_concurrency": 4,
+  "successes": 240,
+  "wall_seconds": 0.8164503329899162,
+  "requests_per_second": 293.95541933469235,
+  "p50_ms": 76.23606201377697,
+  "p95_ms": 84.67606525227893,
+  "uncertain_reservations": 4,
+  "held_or_spent_micros_before": 6228,
+  "spent_micros_after_reconciliation": 5760,
+  "known_successful_usage_micros": 5760,
+  "duplicate_settlement_preserved_balance": true,
+  "restart_preserved_balance": true,
+  "rows": [
+    {
+      "id": 0,
+      "status": "succeeded",
+      "attempted": [
+        "faulty",
+        "healthy"
+      ],
+      "latency_ms": 27.66166703077033
+    },
+    {
+      "id": 1,
+      "status": "succeeded",
+      "attempted": [
+        "faulty",
+        "healthy"
+      ],
+      "latency_ms": 26.384416967630386
+    },
+    {
+      "id": 2,
+      "status": "succeeded",
+      "attempted": [
+        "faulty",
+        "healthy"
+      ],
+      "latency_ms": 27.28637505788356
+    },
+    {
+      "id": 3,
+      "status": "succeeded",
+      "attempted": [
+        "faulty",
+        "healthy"
+      ],
+      "latency_ms": 27.74616703391075
+    },
+    {
+      "id": 4,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 37.49633301049471
+    },
+    {
+      "id": 5,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 38.15212496556342
+    },
+    {
+      "id": 6,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 38.684041996020824
+    },
+    {
+      "id": 7,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 41.016000031959265
+    },
+    {
+      "id": 8,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 51.97304202010855
+    },
+    {
+      "id": 9,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 52.51966696232557
+    },
+    {
+      "id": 10,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 53.093124995939434
+    },
+    {
+      "id": 11,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 55.79625000245869
+    },
+    {
+      "id": 12,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 65.43212500400841
+    },
+    {
+      "id": 13,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 65.92995900427923
+    },
+    {
+      "id": 14,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 67.85033398773521
+    },
+    {
+      "id": 15,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 72.20087497262284
+    },
+    {
+      "id": 16,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 78.39666598010808
+    },
+    {
+      "id": 17,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 78.97249999223277
+    },
+    {
+      "id": 18,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 81.67583303293213
+    },
+    {
+      "id": 19,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 83.79979198798537
+    },
+    {
+      "id": 20,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 93.89187500346452
+    },
+    {
+      "id": 21,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 94.63470801711082
+    },
+    {
+      "id": 22,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 97.24120900500566
+    },
+    {
+      "id": 23,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 97.96345798531547
+    },
+    {
+      "id": 24,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 83.77258398104459
+    },
+    {
+      "id": 25,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 83.78891699248925
+    },
+    {
+      "id": 26,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 85.30729199992493
+    },
+    {
+      "id": 27,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 84.66958400094882
+    },
+    {
+      "id": 28,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 83.65220803534612
+    },
+    {
+      "id": 29,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 83.596124954056
+    },
+    {
+      "id": 30,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 86.35633299127221
+    },
+    {
+      "id": 31,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 85.74620797298849
+    },
+    {
+      "id": 32,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 82.4990410474129
+    },
+    {
+      "id": 33,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 85.94541600905359
+    },
+    {
+      "id": 34,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 86.68933395529166
+    },
+    {
+      "id": 35,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 86.16641600383446
+    },
+    {
+      "id": 36,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 81.69691701186821
+    },
+    {
+      "id": 37,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 84.79920902755111
+    },
+    {
+      "id": 38,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 85.99549997597933
+    },
+    {
+      "id": 39,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 82.62729196576402
+    },
+    {
+      "id": 40,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 80.35791595466435
+    },
+    {
+      "id": 41,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 82.89245801279321
+    },
+    {
+      "id": 42,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 83.23237497825176
+    },
+    {
+      "id": 43,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 83.65616697119549
+    },
+    {
+      "id": 44,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 77.10729102836922
+    },
+    {
+      "id": 45,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 78.75804195646197
+    },
+    {
+      "id": 46,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 79.81545804068446
+    },
+    {
+      "id": 47,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 82.3605420300737
+    },
+    {
+      "id": 48,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 74.00129199959338
+    },
+    {
+      "id": 49,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 76.01187500404194
+    },
+    {
+      "id": 50,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 77.93387497076765
+    },
+    {
+      "id": 51,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 80.38462500553578
+    },
+    {
+      "id": 52,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 70.1981249731034
+    },
+    {
+      "id": 53,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 72.50137499067932
+    },
+    {
+      "id": 54,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 74.14341700496152
+    },
+    {
+      "id": 55,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 76.80933398660272
+    },
+    {
+      "id": 56,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 70.18116605468094
+    },
+    {
+      "id": 57,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 69.0057500032708
+    },
+    {
+      "id": 58,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 70.69920899812132
+    },
+    {
+      "id": 59,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 73.88608402106911
+    },
+    {
+      "id": 60,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 69.84954100335017
+    },
+    {
+      "id": 61,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 71.21829100651667
+    },
+    {
+      "id": 62,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 70.26837498415262
+    },
+    {
+      "id": 63,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 73.99766700109467
+    },
+    {
+      "id": 64,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 70.23808296071365
+    },
+    {
+      "id": 65,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 71.60708296578377
+    },
+    {
+      "id": 66,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 69.78012499166653
+    },
+    {
+      "id": 67,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 73.26604198897257
+    },
+    {
+      "id": 68,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 69.90437500644475
+    },
+    {
+      "id": 69,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 72.33437499962747
+    },
+    {
+      "id": 70,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 70.44300000416115
+    },
+    {
+      "id": 71,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 71.38695899629965
+    },
+    {
+      "id": 72,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 70.44850004604086
+    },
+    {
+      "id": 73,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 72.34012504341081
+    },
+    {
+      "id": 74,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 70.03345800330862
+    },
+    {
+      "id": 75,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 72.16512499144301
+    },
+    {
+      "id": 76,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 71.56133302487433
+    },
+    {
+      "id": 77,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 72.78704101918265
+    },
+    {
+      "id": 78,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 70.32758300192654
+    },
+    {
+      "id": 79,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 72.36462499713525
+    },
+    {
+      "id": 80,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 75.12550003593788
+    },
+    {
+      "id": 81,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 73.07670800946653
+    },
+    {
+      "id": 82,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 70.54737501312047
+    },
+    {
+      "id": 83,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 71.77249999949709
+    },
+    {
+      "id": 84,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 75.10420796461403
+    },
+    {
+      "id": 85,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 72.87016697227955
+    },
+    {
+      "id": 86,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 72.58133398136124
+    },
+    {
+      "id": 87,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 70.96070901025087
+    },
+    {
+      "id": 88,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 74.17849998455495
+    },
+    {
+      "id": 89,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 72.1057080081664
+    },
+    {
+      "id": 90,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 72.06787500763312
+    },
+    {
+      "id": 91,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 71.75404101144522
+    },
+    {
+      "id": 92,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 73.80966696655378
+    },
+    {
+      "id": 93,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 71.67537504574284
+    },
+    {
+      "id": 94,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 72.3180000204593
+    },
+    {
+      "id": 95,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 71.35987497167662
+    },
+    {
+      "id": 96,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 73.46208300441504
+    },
+    {
+      "id": 97,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 72.18437496339902
+    },
+    {
+      "id": 98,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 72.21704197581857
+    },
+    {
+      "id": 99,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 70.72737498674542
+    },
+    {
+      "id": 100,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 74.75575001444668
+    },
+    {
+      "id": 101,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 71.71516603557393
+    },
+    {
+      "id": 102,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 71.82291598292068
+    },
+    {
+      "id": 103,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 70.22175000747666
+    },
+    {
+      "id": 104,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 71.69145799707621
+    },
+    {
+      "id": 105,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 71.769125002902
+    },
+    {
+      "id": 106,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 71.4257910149172
+    },
+    {
+      "id": 107,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 72.71662499988452
+    },
+    {
+      "id": 108,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 71.4027079520747
+    },
+    {
+      "id": 109,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 70.02650003414601
+    },
+    {
+      "id": 110,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 70.20204199943691
+    },
+    {
+      "id": 111,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 72.83766695763916
+    },
+    {
+      "id": 112,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 71.43691700184718
+    },
+    {
+      "id": 113,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 70.13529201503843
+    },
+    {
+      "id": 114,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 70.03599999006838
+    },
+    {
+      "id": 115,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 73.85066599817947
+    },
+    {
+      "id": 116,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 74.7563749901019
+    },
+    {
+      "id": 117,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 72.4039999768138
+    },
+    {
+      "id": 118,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 71.92812499124557
+    },
+    {
+      "id": 119,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 74.28137498209253
+    },
+    {
+      "id": 120,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 73.72283301083371
+    },
+    {
+      "id": 121,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 73.18100001430139
+    },
+    {
+      "id": 122,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 73.16458300920203
+    },
+    {
+      "id": 123,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 74.78254201123491
+    },
+    {
+      "id": 124,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 73.21179198333994
+    },
+    {
+      "id": 125,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 73.29004199709743
+    },
+    {
+      "id": 126,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 73.1800829526037
+    },
+    {
+      "id": 127,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 74.55541705712676
+    },
+    {
+      "id": 128,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 72.80458300374448
+    },
+    {
+      "id": 129,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 73.13191599678248
+    },
+    {
+      "id": 130,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 73.12516699312255
+    },
+    {
+      "id": 131,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 73.62633297452703
+    },
+    {
+      "id": 132,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 72.59916700422764
+    },
+    {
+      "id": 133,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 72.6912910467945
+    },
+    {
+      "id": 134,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 72.38845800748095
+    },
+    {
+      "id": 135,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 74.25195904215798
+    },
+    {
+      "id": 136,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 73.60087498091161
+    },
+    {
+      "id": 137,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 73.63862497732043
+    },
+    {
+      "id": 138,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 73.66187497973442
+    },
+    {
+      "id": 139,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 74.7155420249328
+    },
+    {
+      "id": 140,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 72.64987501548603
+    },
+    {
+      "id": 141,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 71.86216703848913
+    },
+    {
+      "id": 142,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 71.74537499668077
+    },
+    {
+      "id": 143,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 75.40929201059043
+    },
+    {
+      "id": 144,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 72.69270799588412
+    },
+    {
+      "id": 145,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 72.9935829876922
+    },
+    {
+      "id": 146,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 72.37962505314499
+    },
+    {
+      "id": 147,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 76.20020798640326
+    },
+    {
+      "id": 148,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 73.30191700020805
+    },
+    {
+      "id": 149,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 74.27912496495992
+    },
+    {
+      "id": 150,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 73.57754203258082
+    },
+    {
+      "id": 151,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 78.17670796066523
+    },
+    {
+      "id": 152,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 75.52841596771032
+    },
+    {
+      "id": 153,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 76.27191604115069
+    },
+    {
+      "id": 154,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 77.05891702789813
+    },
+    {
+      "id": 155,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 78.8692079950124
+    },
+    {
+      "id": 156,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 77.79941603075713
+    },
+    {
+      "id": 157,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 78.61737499479204
+    },
+    {
+      "id": 158,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 79.19016701634973
+    },
+    {
+      "id": 159,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 79.44666600087658
+    },
+    {
+      "id": 160,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 78.57441698433831
+    },
+    {
+      "id": 161,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 79.17987502878532
+    },
+    {
+      "id": 162,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 79.11812496604398
+    },
+    {
+      "id": 163,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 80.35083301365376
+    },
+    {
+      "id": 164,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 79.12404200760648
+    },
+    {
+      "id": 165,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 79.58037499338388
+    },
+    {
+      "id": 166,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 79.59454198135063
+    },
+    {
+      "id": 167,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 81.56045904615894
+    },
+    {
+      "id": 168,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 80.63724997919053
+    },
+    {
+      "id": 169,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 81.22408296912909
+    },
+    {
+      "id": 170,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 81.63087500724941
+    },
+    {
+      "id": 171,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 81.47620799718425
+    },
+    {
+      "id": 172,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 81.42075000796467
+    },
+    {
+      "id": 173,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 81.2678340007551
+    },
+    {
+      "id": 174,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 82.26054202532396
+    },
+    {
+      "id": 175,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 79.98170901555568
+    },
+    {
+      "id": 176,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 79.99362499685958
+    },
+    {
+      "id": 177,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 78.56358296703547
+    },
+    {
+      "id": 178,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 78.4824580186978
+    },
+    {
+      "id": 179,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 80.451833026018
+    },
+    {
+      "id": 180,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 80.46379202278331
+    },
+    {
+      "id": 181,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 81.5072080004029
+    },
+    {
+      "id": 182,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 81.12925000023097
+    },
+    {
+      "id": 183,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 80.32133296364918
+    },
+    {
+      "id": 184,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 80.26074996450916
+    },
+    {
+      "id": 185,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 80.97170799737796
+    },
+    {
+      "id": 186,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 80.88262501405552
+    },
+    {
+      "id": 187,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 79.85999999800697
+    },
+    {
+      "id": 188,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 79.82895796885714
+    },
+    {
+      "id": 189,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 80.15712501946837
+    },
+    {
+      "id": 190,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 80.07445797557011
+    },
+    {
+      "id": 191,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 78.74749996699393
+    },
+    {
+      "id": 192,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 79.04925005277619
+    },
+    {
+      "id": 193,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 79.28008399903774
+    },
+    {
+      "id": 194,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 77.84991699736565
+    },
+    {
+      "id": 195,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 78.58720899093896
+    },
+    {
+      "id": 196,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 78.5576660418883
+    },
+    {
+      "id": 197,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 78.81345803616568
+    },
+    {
+      "id": 198,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 79.05716699315235
+    },
+    {
+      "id": 199,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 79.48412495898083
+    },
+    {
+      "id": 200,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 79.48887499514967
+    },
+    {
+      "id": 201,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 79.85387503867969
+    },
+    {
+      "id": 202,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 80.07708302466199
+    },
+    {
+      "id": 203,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 79.61554103530943
+    },
+    {
+      "id": 204,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 80.33729100134224
+    },
+    {
+      "id": 205,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 80.84737503668293
+    },
+    {
+      "id": 206,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 80.06404101615772
+    },
+    {
+      "id": 207,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 81.55912498477846
+    },
+    {
+      "id": 208,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 81.58404199639335
+    },
+    {
+      "id": 209,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 83.84991600178182
+    },
+    {
+      "id": 210,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 83.29545904416591
+    },
+    {
+      "id": 211,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 80.82375000230968
+    },
+    {
+      "id": 212,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 80.87874995544553
+    },
+    {
+      "id": 213,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 80.87929198518395
+    },
+    {
+      "id": 214,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 81.62908401573077
+    },
+    {
+      "id": 215,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 81.20912499725819
+    },
+    {
+      "id": 216,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 81.391750019975
+    },
+    {
+      "id": 217,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 81.12620800966397
+    },
+    {
+      "id": 218,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 81.105875025969
+    },
+    {
+      "id": 219,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 80.65654197707772
+    },
+    {
+      "id": 220,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 80.63708402914926
+    },
+    {
+      "id": 221,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 81.70529204653576
+    },
+    {
+      "id": 222,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 81.55145798809826
+    },
+    {
+      "id": 223,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 80.30533301644027
+    },
+    {
+      "id": 224,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 80.18662501126528
+    },
+    {
+      "id": 225,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 80.45504102483392
+    },
+    {
+      "id": 226,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 82.93808298185468
+    },
+    {
+      "id": 227,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 77.33529200777411
+    },
+    {
+      "id": 228,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 77.26991700474173
+    },
+    {
+      "id": 229,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 78.67970899678767
+    },
+    {
+      "id": 230,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 79.22100002178922
+    },
+    {
+      "id": 231,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 76.87870797235519
+    },
+    {
+      "id": 232,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 76.79587497841567
+    },
+    {
+      "id": 233,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 75.30179101740941
+    },
+    {
+      "id": 234,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 75.92187501722947
+    },
+    {
+      "id": 235,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 76.74812496406958
+    },
+    {
+      "id": 236,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 76.75124995876104
+    },
+    {
+      "id": 237,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 76.9929580274038
+    },
+    {
+      "id": 238,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 75.94983297167346
+    },
+    {
+      "id": 239,
+      "status": "succeeded",
+      "attempted": [
+        "healthy"
+      ],
+      "latency_ms": 79.18474997859448
+    }
+  ]
+}
