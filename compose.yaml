@@ -1,0 +1,12 @@
+services:
+  app:
+    build: .
+    environment:
+      APP_DEMO: "1"
+    ports:
+      - "127.0.0.1:8104:8104"
+    volumes:
+      - data:/data
+    restart: unless-stopped
+volumes:
+  data:

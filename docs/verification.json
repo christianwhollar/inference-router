@@ -1,0 +1,22 @@
+{
+  "verified_at_utc": "2026-10-06T01:19:02.029202+00:00",
+  "python": "3.12",
+  "project_tests_passed": 7,
+  "aggregate_tests_passed": 45,
+  "aggregate_skipped": 0,
+  "lint": "passed",
+  "local_command": "pytest tests -q (with optional local integrations enabled as described in README)",
+  "ci_note": "GitHub Actions runs portable tests; local optional integrations were separately exercised.",
+  "container": {
+    "status": "passed",
+    "image": "portfolio-router:local",
+    "health": {
+      "status": "ok",
+      "models": 2
+    },
+    "openapi_paths": 4,
+    "container_uid": "10001"
+  },
+  "terraform": "Terraform 1.9.8 init -backend=false and validate passed with AWS provider 5.100.0; no cloud apply or account-level plan.",
+  "live_model": "qwen2.5-coder:14b through the Ollama adapter; fixture providers tested separately."
+}

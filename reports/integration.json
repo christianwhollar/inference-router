@@ -1,0 +1,115 @@
+{
+  "status": "passed",
+  "vector_chunks_indexed": 4,
+  "dense_answer": {
+    "abstained": false,
+    "answer": "[settlement@1:0] A settlement date mismatch requires confirmation from the counterparty before release. The operations analyst records the expected settlement date and escalates unresolved discrepancies to the settlement team.\n\n[ownership@1:0] The settlement team reports to operations. The operations team owns discrepancy escalation and approval procedures.\n\n[quantity@1:0] When trade quantities differ, compare the booking with the counterparty confirmation. Do not change a position automatically. An independent reviewer approves the proposed correction after checking both records.",
+    "citations": [
+      {
+        "id": "settlement@1:0",
+        "document_id": "settlement",
+        "revision": 1,
+        "title": "Synthetic settlement playbook",
+        "text": "A settlement date mismatch requires confirmation from the counterparty before release. The operations analyst records the expected settlement date and escalates unresolved discrepancies to the settlement team.",
+        "sha256": "4005f6c5344ab2168c1b167a35e49aff698e0e3b66d97e94b075be46d613369c",
+        "score": 0.6520351741376831
+      },
+      {
+        "id": "ownership@1:0",
+        "document_id": "ownership",
+        "revision": 1,
+        "title": "Synthetic team directory",
+        "text": "The settlement team reports to operations. The operations team owns discrepancy escalation and approval procedures.",
+        "sha256": "35e557dfb34c3a0d7b0910ac41dbee256c081d592a63ffa14a96f810a3c495aa",
+        "score": 0.498330056468256
+      },
+      {
+        "id": "quantity@1:0",
+        "document_id": "quantity",
+        "revision": 1,
+        "title": "Quantity reconciliation",
+        "text": "When trade quantities differ, compare the booking with the counterparty confirmation. Do not change a position automatically. An independent reviewer approves the proposed correction after checking both records.",
+        "sha256": "3cca4627aab34e59b0342848ef768c2f252f955afe7249c318f1445ddfb1e880",
+        "score": 0.3624361589474874
+      }
+    ],
+    "mode": "extractive",
+    "context_words": 70,
+    "threshold_note": "Cosine threshold 0.25 is a demo heuristic, not calibrated answer confidence"
+  },
+  "generated_answer": {
+    "abstained": false,
+    "answer": "A settlement date mismatch requires confirmation from the counterparty before release. The operations analyst records the expected settlement date and escalates unresolved discrepancies to the settlement team.",
+    "citations": [
+      {
+        "id": "settlement@1:0",
+        "document_id": "settlement",
+        "revision": 1,
+        "title": "Synthetic settlement playbook",
+        "text": "A settlement date mismatch requires confirmation from the counterparty before release. The operations analyst records the expected settlement date and escalates unresolved discrepancies to the settlement team.",
+        "sha256": "4005f6c5344ab2168c1b167a35e49aff698e0e3b66d97e94b075be46d613369c",
+        "score": 0.03225806451612903,
+        "lexical_score": 0.7537286150561626
+      }
+    ],
+    "mode": "generated",
+    "context_words": 70,
+    "entailment_verified": false
+  },
+  "trade_investigation": {
+    "id": "721c6f3c-b752-4409-8b55-22d34e4e4dea",
+    "status": "awaiting_review",
+    "attempts": 1,
+    "report": {
+      "cash_difference": "-9912.50",
+      "currency": "USD",
+      "differences": [
+        {
+          "counterparty": "1100",
+          "field": "quantity",
+          "internal": "1000"
+        },
+        {
+          "counterparty": "2026-10-09",
+          "field": "settlement",
+          "internal": "2026-10-08"
+        }
+      ],
+      "evidence": [
+        "internal",
+        "counterparty"
+      ],
+      "narrative_source": "deterministic",
+      "recommendation": "review",
+      "requires_independent_review": true,
+      "severity": "normal",
+      "stages": [
+        {
+          "role": "reconciler",
+          "status": "complete",
+          "tool": "compare_records"
+        },
+        {
+          "role": "risk_checker",
+          "status": "complete",
+          "tool": "cash_difference"
+        },
+        {
+          "role": "review_gate",
+          "status": "complete",
+          "tool": "require_independent_review"
+        },
+        {
+          "role": "narrator",
+          "status": "fallback"
+        }
+      ],
+      "summary": "Differences require review: quantity, settlement"
+    }
+  },
+  "trade_final_status": "rejected",
+  "revocation_enforced_without_reindex": true,
+  "router_ready": {
+    "status": "ready"
+  }
+}

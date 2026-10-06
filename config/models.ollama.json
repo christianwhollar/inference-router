@@ -1,0 +1,14 @@
+[
+  {
+    "name": "local-small",
+    "protocol": "ollama",
+    "endpoint": "http://127.0.0.1:11434",
+    "model": "qwen2.5:0.5b",
+    "quality": 0.5,
+    "input_per_million": 0,
+    "output_per_million": 0,
+    "context_tokens": 8192,
+    "approved_for_confidential": true,
+    "timeout_seconds": 30
+  }
+]

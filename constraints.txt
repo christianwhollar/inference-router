@@ -1,0 +1,12 @@
+# Direct dependency versions exercised on Python 3.12. Platform-specific transitive dependencies are resolved by pip.
+fastapi==0.142.2
+httpx==0.28.1
+numpy==2.5.3
+opentelemetry-exporter-otlp-proto-http==1.45.0
+opentelemetry-sdk==1.45.0
+prometheus-client==0.26.0
+psycopg==3.3.6
+pytest==9.1.1
+pytest-asyncio==1.4.0
+ruff==0.16.10
+uvicorn==0.54.0
